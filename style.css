@@ -26,15 +26,16 @@ button{
 
 .cont{
     border: solid;
-    height: 100px;
-    width: 35%;
+    width: 306px;
     display: flex;
-    justify-content: stretch;
+    flex-wrap: wrap;
+    background-color: red;
 }
 
 .cont > div{
-width: 100%;
+width: 100px;
+height: 100px;
 background-color: green;
-border: solid;
+border: solid 1px;
 }
 

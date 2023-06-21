@@ -29,10 +29,10 @@ going to want an object to control the flow of the game itself.
 
 
 
-const gameBoard = {
-    gameBoard: [],
+// const gameBoard = {
+//     gameBoard: [],
 
-}
+// }
 
 
 
@@ -42,29 +42,43 @@ in gameboard
 User cannot click on already selected box(disable the box?)
 */
 
-function game() {
-    const x = document.createElement('p')
-    const o = document.createElement('p')
-    x.textContent = 'X'
-    o.textContent = 'O'
-    
-    // gameBoard.gameBoard.push() 
-    
-    const gameGrids = document.querySelectorAll('.cont')
+const grids = document.querySelectorAll('.grid')
+const gridOne = document.querySelector('.gridOne')
+const gridTwo = document.querySelector('.gridTwo')
+const gridThree = document.querySelector('.gridThree')
+const gridFour = document.querySelector('.gridFour')
+const gridFive = document.querySelector('.gridFive')
+const gridSix = document.querySelector('.gridSix')
+const gridSeven = document.querySelector('.gridSeven')
+const gridEight = document.querySelector('.gridEight')
+const gridNine = document.querySelector('.gridNine')
 
-    gameGrids.forEach(grids => {
-
-        grids.addEventListener('click', e =>{
-            console.log(e);
-        })
+grids.forEach((grids,index)=>{
+    grids.addEventListener('click',()=>{
+        if (index === 0) {
+            gridOne.textContent = 'X'
+        } else if (index === 1){
+            gridTwo.textContent = 'X'
+        }else if(index === 2){
+            gridThree.textContent = 'X'
+        }else if(index === 3){
+            gridFour.textContent = 'X'
+        }else if(index === 4){
+            gridFive.textContent = 'X'
+        }else if(index === 5){
+            gridSix.textContent = 'X'
+        }else if(index === 6){
+            gridSeven.textContent = 'X'
+        }else if(index === 7){
+            gridEight.textContent = 'X'
+        }else if(index === 8){
+            gridNine.textContent = 'X'
+        }
     })
+})
 
 
-}
 
-game()
-
-// You have created the grids using fro each. try to add a x or o on it.
 
 
 
@@ -122,18 +136,18 @@ const x = document.querySelector('#x')
 
 const o = document.querySelector('#o')
 
-x.addEventListener('click', () => {
+x.addEventListener('click', (e) => {
     const xIcon = document.createElement('p')
     xIcon.textContent = 'X'
     console.log(xIcon);
-    // create a function and paste it here.
+    //no need for if statement - this runs first.
 })
 
 o.addEventListener('click', () => {
     const oIcon = document.createElement('p')
     oIcon.textContent = 'O'
     console.log(oIcon);
-    // create a function and paste it here.  
+    // You might need to create a if statement when the player chooses O.
 })
 
 
