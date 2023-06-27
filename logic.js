@@ -39,12 +39,26 @@
 
 
 const grids = document.querySelectorAll('.grid')
-
+const winnerText = document.querySelector('.result')
 
 let count = 0;
+let win = true;
 
 let xIndex = [];
 let oIndex = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 grids.forEach((grids, index) => {
     grids.addEventListener('click', () => {
@@ -55,11 +69,22 @@ grids.forEach((grids, index) => {
             grids.style.fontSize = '90px'
             grids.style.pointerEvents = 'none' // stops the dive from chaning the player.
             oIndex.push(index)
+            if (winnerText.textContent === 'X Won' || winnerText.textContent === 'O Won') {
+                grids.textContent = ''
+                xIndex = [];
+                oIndex = []
+            }
         } else {
             grids.textContent = 'X'
             grids.style.fontSize = '90px'
             grids.style.pointerEvents = 'none'
             xIndex.push(index)
+
+            if (winnerText.textContent === 'X Won' || winnerText.textContent === 'O Won') {
+                grids.textContent = ''
+                xIndex = [];
+                oIndex = []
+            }
         }
 
         const xSort = xIndex.sort((a, b) => a - b)
@@ -81,8 +106,10 @@ grids.forEach((grids, index) => {
             ||
             xSort[0] === 2 && xSort[1] === 4 && xSort[2] === 6
         ) {
-            console.log('X wins');
-        } else if (oSort[0] === 0 && oSort[1] === 1 && oSort[2] === 2
+            winnerText.textContent = 'X Won'
+        }
+
+        else if (oSort[0] === 0 && oSort[1] === 1 && oSort[2] === 2
             ||
             oSort[0] === 3 && oSort[1] === 4 && oSort[2] === 5
             ||
@@ -98,8 +125,11 @@ grids.forEach((grids, index) => {
             ||
             oSort[0] === 2 && oSort[1] === 4 && oSort[2] === 6
         ) {
-            console.log('O wins');
-        } else if (xSort.length === 5 || oSort.length === 5 ){
+            winnerText.textContent = 'O Won'
+        }
+
+
+        else if (xSort.length === 5 || oSort.length === 5) {
             console.log('draw');
         }
 

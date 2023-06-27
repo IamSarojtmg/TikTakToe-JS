@@ -1,16 +1,19 @@
-html{
+html {
     background-color: gray;
     display: flex;
     justify-content: center;
-}
-
-.controller{
-    width: 1000px;
+  }
+  
+  .controller {
+    width: 70vw;
     background-color: white;
     height: 800px;
-}
-
-.gameboard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .gameboard {
     width: 100%;
     background-color: silver;
     height: 70%;
@@ -18,24 +21,31 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-button{
+  }
+  
+  button {
     width: 100px;
-}
-
-.cont{
+  }
+  
+  .cont {
     border: solid;
     width: 306px;
     display: flex;
     flex-wrap: wrap;
     background-color: red;
-}
-
-.cont > div{
-width: 100px;
-height: 100px;
-background-color: green;
-border: solid 1px;
-}
-
+  }
+  
+  .cont>div {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: solid 1px;
+    font-size: 90px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .result{
+    font-size: 100px;
+  }
