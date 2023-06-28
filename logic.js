@@ -5,16 +5,19 @@ const player = (function () {
         }
     }
 }
-)()
+)() //factory function wih IIFE
 
-const one = player.icon('X')
+const one = player.icon('X') // show X
 const two = player.icon('O')
 
 const grids = document.querySelectorAll('.grid')
 const winnerText = document.querySelector('.result')
+const btn = document.querySelector('button')
+btn.addEventListener('click', () => {
+    location.reload();
+});
 
 let count = 0;
-let win = true;
 
 let xIndex = [];
 let oIndex = [];
@@ -117,7 +120,7 @@ grids.forEach((grids, index) => {
         }
 
         else if (xSort.length === 5 || oSort.length === 5) {
-            console.log('draw');
+            winnerText.textContent = 'No one'
         }
 
     })
